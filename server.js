@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-const rootFolder = '/Users/xgqfrms-mm/Documents/github/IELTS-Guide-2th/docs/《雅思考试官方指南》（第2版）';
+const rootFolder = './docs/《雅思考试官方指南》（第2版）';
 
 try {
   let treeFilePath = rootFolder + `tree.md`;
@@ -27,7 +27,7 @@ const treeFlatRecursiveTraversal = async (folderName = rootFolder) => {
         await treeFlatRecursiveTraversal(pathName)
       } else {
         // console.log(`📂 fileName =`, fileName)
-        const relativePath = pathName.replace(`/Users/xgqfrms-mm/Documents/github/IELTS-Guide-2th/docs/`, ``);
+        const relativePath = pathName.replace(`./docs/`, ``);
         let url = `https://ielts-guide-2nd.xgqfrms.xyz/${encodeURIComponent(relativePath)}`;
         switch (relativePath) {
           case `《雅思考试官方指南》（第2版）/视频：口语考试实况录像/01 Speaking Sample 1.mp4`:
